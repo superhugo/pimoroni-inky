@@ -10,8 +10,8 @@ from machine import Pin, SPI
 gc.collect()
 
 # variables
-dir_path        = r'sd/'
 update_interval = 10 # minutes
+photos_path     = "sd/"
 photos          = []
 
 # set up the display
@@ -35,13 +35,13 @@ def display_image(filename):
   graphics.update()
 
 # count and choose a photo to display
-for file in os.listdir(dir_path):
+for file in os.listdir(photos_path):
   if not file.startswith(".") and file.endswith(".jpg"):
     photos.append(file)
 
 while True:
   # display image
-  display_image("sd/" + choice(photos))
+  display_image(photos_path + choice(photos))
 
   # go to sleep and wake up after "update_interval" minutes
   inky_frame.sleep_for(update_interval)
