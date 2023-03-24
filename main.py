@@ -3,16 +3,16 @@ import os
 import inky_frame
 import jpegdec
 import sdcard
-from random import randint
+from random import choice
 from picographics import PicoGraphics, DISPLAY_INKY_FRAME_7 as DISPLAY
 from machine import Pin, SPI
 
 gc.collect()
 
-# global variables
-UPDATE_INTERVAL = 10 # minutes
-PHOTO_COUNT = 0
-DIR_PATH = r'sd/'
+# variables
+dir_path        = r'sd/'
+update_interval = 10 # minutes
+photos          = []
 
 # set up the display
 graphics = PicoGraphics(DISPLAY)
@@ -35,14 +35,14 @@ def display_image(filename):
   graphics.update()
 
 # count and choose a photo to display
-for file in os.listdir(DIR_PATH):
+for file in os.listdir(dir_path):
   if not file.startswith(".") and file.endswith(".jpg"):
-    PHOTO_COUNT += 1
+    photos.append(file)
 
 while True:
   # display image
-  display_image("sd/" + str(randint(1, PHOTO_COUNT)) + ".jpg")
-  
-  # go to sleep and wake up after UPDATE_INTERVAL minutes
-  inky_frame.sleep_for(UPDATE_INTERVAL)
-  print("going to sleep")
+  display_image("sd/" + choice(photos))
+
+  # go to sleep and wake up after "update_interval" minutes
+  inky_frame.sleep_for(update_interval)
+  print("ZzzzZzz going to sleep")
