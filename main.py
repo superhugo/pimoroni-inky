@@ -34,7 +34,7 @@ def display_image(filename):
   j.decode(0, 0, jpegdec.JPEG_SCALE_FULL)
   graphics.update()
 
-# count and choose a photo to display
+# create a list of photos
 for file in os.listdir(photos_path):
   if not file.startswith(".") and file.endswith(".jpg"):
     photos.append(file)
