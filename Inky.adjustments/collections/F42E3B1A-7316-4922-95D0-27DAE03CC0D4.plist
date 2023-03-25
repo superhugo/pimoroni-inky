@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>container</key>
+	<true/>
+	<key>created-at-base-version</key>
+	<integer>1636</integer>
+	<key>id</key>
+	<string>F42E3B1A-7316-4922-95D0-27DAE03CC0D4</string>
+	<key>name</key>
+	<string>Container</string>
+	<key>options</key>
+	<integer>2</integer>
+	<key>presets-list</key>
+	<array>
+		<string>4AA9EAEC-F5E6-4F36-9AB3-F18A64D850FE</string>
+	</array>
+</dict>
+</plist>
