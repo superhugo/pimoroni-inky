@@ -10,7 +10,7 @@ from machine import Pin, SPI
 gc.collect()
 
 # variables
-update_interval = 10 # minutes
+update_interval = 720 # minutes
 photos_path     = "sd/"
 photos          = []
 
